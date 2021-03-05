@@ -7,11 +7,11 @@ public class RubberDuck extends Duck {
 
     @Override
     public void swim() {
-        System.err.println("I can't swim :/");
+        System.out.println("I can't swim :/");
     }
 
     @Override
     public void fly() {
-        System.err.println("I can't fly :/");
+        System.out.println("I can't fly :/");
     }
 }

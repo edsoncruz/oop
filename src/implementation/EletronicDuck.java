@@ -12,6 +12,6 @@ public class EletronicDuck extends Duck {
 
     @Override
     public void fly() {
-        System.err.println("I can't fly :/");
+        System.out.println("I can't fly :/");
     }
 }
