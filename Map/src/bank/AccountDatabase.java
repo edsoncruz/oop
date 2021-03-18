@@ -76,4 +76,26 @@ public class AccountDatabase {
 
         System.out.println("Deposited successfully! Balance : " + account.getBalance());
     }
+
+    public void transfer(int originAccountNumber, int destinyAccountNumber, double transferAmount){
+        Account originAccount = this.accounts.get(originAccountNumber);
+        Account destinyAccount = this.accounts.get(destinyAccountNumber);
+
+        if(originAccount == null) {
+            throw new IllegalArgumentException("Origin account doesn't exist!");
+        }
+
+        if(destinyAccount == null) {
+            throw new IllegalArgumentException("Destiny account doesn't exist!");
+        }
+
+        if(transferAmount > originAccount.getBalance()){
+            throw new IllegalArgumentException("Not enough balance: " + originAccount.getBalance());
+        }
+
+        originAccount.setBalance(originAccount.getBalance() - transferAmount);
+        destinyAccount.setBalance(destinyAccount.getBalance() + transferAmount);
+
+        System.out.println("Transferred successfully!");
+    }
 }
